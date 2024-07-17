@@ -17,8 +17,9 @@ def get_weather(city):
         temperature = main["temp"]
         humidity = main["humidity"]
         wind_speed = wind["speed"]
+        icon=data["weather"][0]["icon"]
 
-        return temperature, humidity, wind_speed
+        return temperature, humidity, wind_speed, icon
     else:
         messagebox.showerror("Error", "City Not Found")
         return None
@@ -28,8 +29,9 @@ def show_weather():
     city = city_entry.get()
     weather = get_weather(city)
     if weather:
-        temperature, humidity, wind_speed = weather
+        temperature, humidity, wind_speed, icon = weather
         result_label.config(text=f"Temperature: {temperature}°C\nHumidity: {humidity}%\nWind Speed: {wind_speed} m/s")
+        result_label.config(image=f"Temperature: {temperature}°C\nHumidity: {humidity}%\nWind Speed: {wind_speed} m/s")
 
 # Setting up the GUI
 app = tk.Tk()
