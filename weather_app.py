@@ -55,7 +55,7 @@ def show_weather():
 
 # Creating the main window
 root = tk.Tk()
-root.title("Tinker Weather App")
+root.title("Walter's Weather App using Tinker")
 root.geometry("400x500")
 
 # Adding the icon
